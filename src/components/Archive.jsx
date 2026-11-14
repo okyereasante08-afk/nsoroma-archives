@@ -13,7 +13,7 @@ const INITIAL = { environment: ALL, category: ALL, launchEra: ALL, status: ALL }
 
 const unique = (items, key) => [...new Set(items.map((i) => i[key]).filter(Boolean))].sort()
 
-export default function Archive({ items, onInspect }) {
+export default function Archive({ items }) {
   const [query, setQuery] = useState('')
   const [filters, setFilters] = useState(INITIAL)
 
@@ -72,9 +72,9 @@ export default function Archive({ items, onInspect }) {
               </article>
               <div className="entry__side">
                 <StatusBadge status={item.status} />
-                <button type="button" className="btn" onClick={() => onInspect(item.id)}>
-                  Inspect<span className="sr-only"> {item.name}</span>
-                </button>
+                <a className="btn" href={`#/machine/${item.id}`}>
+                  View full page<span className="sr-only"> for {item.name}</span>
+                </a>
               </div>
             </li>
           ))}
