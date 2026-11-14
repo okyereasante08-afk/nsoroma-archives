@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import StatusBadge from './StatusBadge.jsx'
-import { assetUrl } from '../utils/format.js'
+import SafeImage from './SafeImage.jsx'
 
 // Rotating showcase. Each slide links to that machine's own full-screen page.
 // Rotation can be paused, stops on hover or focus, and is off when reduced motion is on.
@@ -47,7 +47,7 @@ export default function Carousel({ items, prefs }) {
               >
                 <div className="slide__art">
                   {item.image ? (
-                    <img src={assetUrl(item.image)} alt={item.imageAltText || ''} />
+                    <SafeImage path={item.image} alt={item.imageAltText} />
                   ) : (
                     <div className="slide__placeholder" aria-hidden="true">
                       <span className="slide__year">{item.launchDate.slice(0, 4)}</span>

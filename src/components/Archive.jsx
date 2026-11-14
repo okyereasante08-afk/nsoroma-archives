@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import StatusBadge from './StatusBadge.jsx'
 import { formatDate } from '../utils/format.js'
+import SafeImage from './SafeImage.jsx'
 
 const ALL = 'all'
 const FIELDS = [
@@ -64,6 +65,7 @@ export default function Archive({ items }) {
             <li key={item.id} className="entry">
               <p className="entry__year" aria-hidden="true">{item.launchDate.slice(0, 4)}</p>
               <article className="entry__main" aria-labelledby={`title-${item.id}`}>
+                {item.image && <SafeImage className="entry__img" path={item.image} alt={item.imageAltText} loading="lazy" />}
                 <h3 id={`title-${item.id}`}>{item.name}</h3>
                 <p className="meta-line">{item.category}</p>
                 <p className="meta-line">Launched {formatDate(item.launchDate)}</p>

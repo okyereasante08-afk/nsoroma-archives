@@ -37,8 +37,23 @@ data.forEach((item, i) => {
   if (item.model && !item.modelSource) fail(`${tag}: model needs modelSource (attribution)`)
 })
 
+// Scroll backgrounds
+const backgrounds = JSON.parse(fs.readFileSync(path.join(root, 'src/data/backgrounds.json'), 'utf8'))
+backgrounds.forEach((bg, i) => {
+  if (!fs.existsSync(path.join(root, 'public', bg.src))) fail(`backgrounds.json #${i + 1}: file not found at public${bg.src}`)
+})
+
+// Explainer video: files must exist, and a video must come with captions and a transcript
+const story = JSON.parse(fs.readFileSync(path.join(root, 'src/data/story.json'), 'utf8'))
+const storyFiles = [story.video, story.poster, story.audioDescribedVideo, story.signLanguageVideo, ...(story.captions || []).map((c) => c.src)]
+storyFiles.filter(Boolean).forEach((f) => {
+  if (!fs.existsSync(path.join(root, 'public', f))) fail(`story.json: file not found at public${f}`)
+})
+if (story.video && !(story.captions || []).length) fail('story.json: a video needs at least one captions track')
+if (story.video && !(Array.isArray(story.transcript) && story.transcript.length)) fail('story.json: a video needs a transcript')
+
 if (errors) {
   console.error(`\nhardware.json has ${errors} problem(s). Fix them and try again.`)
-  process.exit(1)
+  process.exit(process.argv.includes('--warn') ? 0 : 1)
 }
 console.log(`hardware.json OK: ${data.length} records.`)

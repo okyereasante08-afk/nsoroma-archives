@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import StatusBadge from './StatusBadge.jsx'
 import ModelViewer from './ModelViewer.jsx'
 import ReadAloud from './ReadAloud.jsx'
+import SafeImage from './SafeImage.jsx'
 import { formatDate, sourceLabel, assetUrl } from '../utils/format.js'
 
 function buildReadText(item) {
@@ -66,7 +67,7 @@ export default function MachinePage({ item, prefs }) {
             <div>
               {item.image && (
                 <figure className="machine__figure">
-                  <img src={assetUrl(item.image)} alt={item.imageAltText || ''} />
+                  <SafeImage path={item.image} alt={item.imageAltText} />
                 </figure>
               )}
               <section aria-labelledby="m-3d">

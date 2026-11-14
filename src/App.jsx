@@ -5,6 +5,9 @@ import Carousel from './components/Carousel.jsx'
 import MachinePage from './components/MachinePage.jsx'
 import Welcome from './components/Welcome.jsx'
 import A11yPanel from './components/A11yPanel.jsx'
+import ScrollBackground from './components/ScrollBackground.jsx'
+import Story from './components/Story.jsx'
+import story from './data/story.json'
 import { usePreferences, PRESETS } from './hooks/usePreferences.js'
 
 // Machine pages live at #/machine/<id>. Everything else is the home page.
@@ -95,6 +98,7 @@ export default function App() {
 
   return (
     <>
+      <ScrollBackground prefs={prefs} />
       <a className="skip-link" href="#main">Skip to main content</a>
 
       <header className="site-header">
@@ -132,13 +136,10 @@ export default function App() {
           </div>
         </section>
 
-        <section className="section section--tint" id="story" aria-labelledby="story-title">
-          <div className="container container--narrow">
-            <h2 id="story-title">The Space Story</h2>
-            <p>
-              Our short explainer video introduces NASA's space hardware in plain language. It is still in production. When it is ready, it will appear here with captions, a full transcript and audio description.
-            </p>
-            <p>Until then, every machine has a written story you can read or hear aloud.</p>
+        <section className="section" id="story" aria-labelledby="story-title">
+          <div className="container">
+            <h2 id="story-title">{story.title}</h2>
+            <Story />
           </div>
         </section>
 
@@ -157,7 +158,7 @@ export default function App() {
           </div>
         </section>
 
-        <section className="section section--tint" id="archive" aria-labelledby="archive-title">
+        <section className="section" id="archive" aria-labelledby="archive-title">
           <div className="container">
             <h2 id="archive-title">The hardware archive</h2>
             <p className="section__intro">

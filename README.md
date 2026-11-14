@@ -20,6 +20,11 @@ Open the address it prints (usually http://localhost:5173).
    `git remote add origin <your repo URL>`, `git push -u origin main`
 2. Go to vercel.com, choose **Add New Project**, import the repository and press **Deploy**. Vercel detects Vite by itself. Every `git push` after that updates the live site.
 
+## How the site is organised
+
+- Home page: hero, rotating **Featured machines** carousel, story, about, searchable archive, sources.
+- Each machine has its own full-screen page at `#/machine/<id>` (for example `#/machine/sojourner-rover`). Cards are normal links, so they can be opened in a new tab.
+
 ## Folder map
 
 | Path | What it is |
@@ -42,8 +47,24 @@ Open the address it prints (usually http://localhost:5173).
 ## Adding media (media team)
 
 - **3D model:** convert to `.glb`, keep it under about 10 MB, put it in `public/assets/models/`. In the record set `"model": "/assets/models/<id>.glb"` and fill in `"modelSource"` with the credit. The site shows a friendly message if there is no model.
-- **Photo:** put it in `public/assets/images/`, set `"image"` and write `"imageAltText"` describing what the picture shows. (Photos are not displayed in the archive yet. See "Next upgrades".)
+- **Photo:** put it in `public/assets/images/`, set `"image"` and write `"imageAltText"` describing what the picture shows. The photo appears in the home-page carousel and on the machine's own page. Until then a placeholder shows.
 - **Voiceover:** put an `.mp3` in `public/assets/audio/` and set `"audioFile": "/assets/audio/<id>.mp3"`. A player appears in the inspector. The written `audioDescription` stays as the text version and is what read-aloud uses.
+
+## Scroll background
+
+`src/data/backgrounds.json` lists the pictures that fade in behind the page as you scroll (blue first, then each picture in order, blurred and darkened). To use your own: put images (`.jpg`, `.webp` or `.svg`, ideally under 400 KB) in `public/assets/backgrounds/` and add a line for each in the file. You must have the right to use every image, so add a credit. It stays plain blue when reduced motion or high contrast is on.
+
+## Explainer video
+
+Everything is set in `src/data/story.json`. Put files in `public/assets/video/` and fill in the paths:
+
+- `video`: the main `.mp4`. `poster`: an optional still image.
+- `captions`: a list like `[{ "lang": "en", "label": "English", "src": "/assets/video/story.en.vtt" }]`. Captions are `.vtt` files: the first line is `WEBVTT`, then blocks such as `00:00:00.000 --> 00:00:04.000` followed by the spoken words and sound descriptions.
+- `audioDescribedVideo`: optional second `.mp4` with extra narration describing the visuals. A checkbox lets visitors switch to it.
+- `signLanguageVideo`: optional `.mp4` of the interpreter, shown beside the main video.
+- `transcript`: a list of paragraphs, for example `["Narrator: Welcome...", "..."]`.
+
+`npm run validate` refuses to build if a video has no captions or transcript.
 
 ## Accessibility notes
 
@@ -53,7 +74,5 @@ Open the address it prints (usually http://localhost:5173).
 
 ## Next upgrades
 
-- Show `image` in the archive rows and inspector.
-- Explainer video with captions, transcript and sign-language video.
 - More records (Phoenix, InSight, Spirit, Opportunity, Viking 1 and 2, Dawn, NEAR Shoemaker, Kepler, ALSEP).
 - Verify every entry against NASA sources, then set `"verified": true`.
