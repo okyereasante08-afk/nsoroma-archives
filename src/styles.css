@@ -92,7 +92,7 @@ input[type='search'], select { font: inherit; min-height: 2.75rem; padding: .5re
 
 /* Archive: one hard-edged block per machine */
 .index { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.75rem; }
-.entry { --year-size: clamp(1.75rem, 4vw, 3rem); display: grid; grid-template-columns: calc(var(--year-size) * 3.2) minmax(0, 1fr) auto; gap: 0 2rem; align-items: start; padding: 1.5rem; background: var(--white); color: var(--ink); border: 4px solid var(--ink); box-shadow: var(--shadow); }
+.entry { --year-size: clamp(1.25rem, 3vw, 2.25rem); display: grid; grid-template-columns: max-content minmax(0, 1fr) auto; gap: 0 2rem; align-items: start; padding: 1.5rem; background: var(--white); color: var(--ink); border: 4px solid var(--ink); box-shadow: var(--shadow); }
 .entry__year { font-family: var(--display); font-weight: 800; font-size: var(--year-size); line-height: 1; color: var(--blue); margin: 0; white-space: nowrap; }
 .entry__main h3 { margin-top: 0; font-size: clamp(1.25rem, 2.5vw, 1.8rem); }
 .entry__main p:last-child { margin-top: .75rem; }
