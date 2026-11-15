@@ -1,13 +1,13 @@
 {
   "title": "The Space Story",
   "intro": "Our short explainer video introduces NASA's space hardware in plain language. It comes with captions, a full written transcript, an audio-described version and a sign-language video.",
-  "video": "/assets/video/apollo-11-lunar-module-eaglen.mp4",
+  "video": "/assets/video/apollo-11-lunar-module-eagle.mp4",
   "poster": "/assets/video/space-story-poster.jpg",
   "captions": [
     {
       "lang": "en",
       "label": "English",
-      "src": "/assets/video/space-story.en.vtt"
+      "src": "/assets/video/apollo-11-lunar-module-eagle.en.vtt"
     }
   ],
   "audioDescribedVideo": "/assets/video/space-story-audio-described.mp4",
