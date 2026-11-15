@@ -17,7 +17,7 @@ export default function Carousel({ items, prefs }) {
 
   useEffect(() => {
     if (!rotating) return
-    const timer = setInterval(() => setIndex((i) => (i + 1) % count), 6000)
+    const timer = setInterval(() => setIndex((i) => (i + 1) % count), 3000)
     return () => clearInterval(timer)
   }, [rotating, count])
 
