@@ -187,7 +187,9 @@ export default function App() {
 
       <footer className="site-footer">
         <div className="container">
-          <p>NSOROMA ARCHIVES. Space exploration belongs to everyone.</p>
+          <p>NSOROMA ARCHIVES. Space exploration belongs to everyone.
+            background
+          </p>
         </div>
       </footer>
 
