@@ -48,7 +48,10 @@ ul { padding-left: 1.25rem; }
 /* Header */
 .site-header, .machine-bar { background: var(--white); border-bottom: 4px solid var(--ink); }
 .site-header__inner, .machine-bar__inner { display: flex; flex-wrap: wrap; gap: .5rem 2rem; align-items: center; justify-content: space-between; padding-top: .75rem; padding-bottom: .75rem; }
-.brand { font-family: var(--display); font-weight: 800; font-size: 1.15rem; color: var(--ink); text-decoration: none; letter-spacing: .02em; }
+.brand { display: inline-flex; align-items: center; gap: .7rem; font-family: var(--display); font-weight: 800; font-size: 1.15rem; color: var(--ink); text-decoration: none; letter-spacing: .02em; }
+.brand:hover { background: none; }
+.brand__mark { display: grid; place-items: center; flex: none; width: 2.75rem; height: 2.75rem; background: var(--blue); border: 3px solid var(--ink); }
+.brand__mark img { display: block; width: 78%; height: auto; }
 .nav { display: flex; flex-wrap: wrap; gap: .25rem 1rem; list-style: none; margin: 0; padding: 0; }
 .nav a, .back { display: inline-block; padding: .4rem .6rem; color: var(--ink); text-decoration: none; border: 3px solid transparent; }
 .nav a:hover, .back:hover { background: var(--red); border-color: var(--ink); color: var(--ink); }
@@ -221,3 +224,8 @@ legend { font-family: var(--display); font-weight: 800; padding: 0 .5rem; backgr
 .image-missing { display: grid; place-items: center; padding: 1rem; background: var(--blue); color: var(--white); text-align: center; font-weight: 700; overflow-wrap: anywhere; }
 .image-missing p { margin: 0; }
 .slide__art .image-missing { height: 100%; }
+
+/* Logo in the hero, and the rotation button for 3D models */
+.hero__logo { display: block; width: clamp(5rem, 14vw, 9rem); height: auto; margin-bottom: 1.5rem; filter: drop-shadow(5px 5px 0 var(--ink)); }
+.viewer__bar { display: flex; flex-wrap: wrap; align-items: flex-start; gap: .75rem 1.25rem; margin-top: .75rem; }
+.viewer__bar .viewer__help { margin: 0; flex: 1 1 16rem; }

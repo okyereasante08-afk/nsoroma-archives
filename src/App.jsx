@@ -7,6 +7,8 @@ import Welcome from './components/Welcome.jsx'
 import A11yPanel from './components/A11yPanel.jsx'
 import ScrollBackground from './components/ScrollBackground.jsx'
 import Story from './components/Story.jsx'
+import Brand from './components/Brand.jsx'
+import { assetUrl } from './utils/format.js'
 import story from './data/story.json'
 import { usePreferences, PRESETS } from './hooks/usePreferences.js'
 
@@ -103,7 +105,7 @@ export default function App() {
 
       <header className="site-header">
         <div className="container site-header__inner">
-          <a className="brand" href="#top">NSOROMA ARCHIVES</a>
+          <Brand />
           <nav aria-label="Main">
             <ul className="nav">
               <li><a href="#featured">Featured</a></li>
@@ -119,6 +121,7 @@ export default function App() {
       <main id="main">
         <section className="hero" id="top" aria-labelledby="hero-title">
           <div className="container">
+            <img className="hero__logo" src={assetUrl('/nsoroma-logo.png')} alt="" />
             <h1 id="hero-title">NSOROMA ARCHIVES</h1>
             <p className="hero__lede">Space exploration belongs to everyone.</p>
             <p className="hero__text">
@@ -176,7 +179,7 @@ export default function App() {
               <li><a href="https://nssdc.gsfc.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA Space Science Data Coordinated Archive<span className="sr-only"> (opens in a new tab)</span></a></li>
               <li><a href="https://science.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA Science<span className="sr-only"> (opens in a new tab)</span></a></li>
             </ul>
-            <p>Built by a student team for the NASA Space Apps Challenge. This project is not affiliated with or endorsed by NASA.</p>
+            <p>Built by Team A.J.A & Friends for the NASA Space Apps Challenge. This project is not affiliated with or endorsed by NASA.</p>
           </div>
         </section>
       </main>

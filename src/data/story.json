@@ -2,9 +2,43 @@
   "title": "The Space Story",
   "intro": "Our short explainer video introduces NASA's space hardware in plain language. It comes with captions, a full written transcript, an audio-described version and a sign-language video.",
   "video": "/assets/video/space-story.mp4",
-  "poster": null,
-  "captions": [],
-  "audioDescribedVideo": null,
+  "poster": "/assets/video/space-story-poster.jpg",
+  "captions": [
+    {
+      "lang": "en",
+      "label": "English",
+      "src": "/assets/video/space-story.en.vtt"
+    }
+  ],
+  "audioDescribedVideo": "/assets/video/space-story-audio-described.mp4",
   "signLanguageVideo": null,
-  "transcript": null
+  "transcript": [
+    "[A golden footpad on grey moon dust, beside a bootprint. A title reads: Mind my foot!]",
+    "Narrator: Mind my foot! You're standing on my footpad.",
+    "Narrator: I'm Eagle's descent stage.",
+    "Narrator: On the 20th of July, 1969, I burned for 756 seconds",
+    "[An astronaut stands by the lander's ladder.]",
+    "[The lander's engine fires, throwing up dust. A fuel gauge reads seven percent.]",
+    "Narrator: to land two humans at Tranquility Base.",
+    "[The gauge falls to zero, empty.]",
+    "Narrator: Engineers gave me four legs, a ladder, and room to carry science. And no seats.",
+    "[A cartoon armchair appears beside the cramped lander.]",
+    "Narrator: Talk about standing room only.",
+    "Narrator: After 21 hours, Eagle's top half launched from my back.",
+    "[Two astronauts stand on the Moon, with Earth in the black sky. They wave, and one gives a thumbs up.]",
+    "Narrator: I stayed behind.",
+    "Narrator: 17 meters away, my little sibling, EASEP,",
+    "[A small solar-powered science station sits on the surface, rings of light pulsing outward.]",
+    "Narrator: listened for tremors in the Moon.",
+    "Narrator: It measured dust, powered by the sun.",
+    "[A thermometer shows plus thirty degrees Celsius.]",
+    "Narrator: It even survived heat 30 degrees past plan.",
+    "Narrator: Then, on the 27th of August, it stopped answering.",
+    "[It goes dark. A calendar shows the 27th of August, 1969.]",
+    "[A panel of mirrors glints in the sunlight.]",
+    "Narrator: Five meters away, a reflector needs no power at all.",
+    "[The lander stands far behind, the small reflector in front.]",
+    "Narrator: Keep waiting. Come say hi.",
+    "[The Moon fills the screen, with the Earth beside it among the stars.]"
+  ]
 }

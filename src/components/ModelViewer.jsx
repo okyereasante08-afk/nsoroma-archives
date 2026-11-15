@@ -1,9 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import { assetUrl } from '../utils/format.js'
 
-// Shows the 3D model when one exists. Otherwise shows a clear message, never a broken box.
-export default function ModelViewer({ item }) {
+// Shows the 3D model when one exists. It turns slowly by itself so it is obvious it is 3D.
+// Rotation starts off when reduced motion is on, and there is always a button to stop or start it.
+export default function ModelViewer({ item, prefs }) {
+  const reduceMotion = prefs.motion === 'reduce' || window.matchMedia('(prefers-reduced-motion: reduce)').matches
   const [state, setState] = useState(item.model ? 'loading' : 'none')
+  const [playing, setPlaying] = useState(!reduceMotion)
   const ref = useRef(null)
 
   useEffect(() => {
@@ -47,11 +50,21 @@ export default function ModelViewer({ item }) {
           touch-action="pan-y"
           shadow-intensity="1"
           interaction-prompt="none"
+          auto-rotate={playing ? '' : undefined}
+          rotation-per-second="12deg"
+          auto-rotate-delay="500"
         ></model-viewer>
       </div>
-      <p className="viewer__help">
-        {state === 'loading' ? 'Loading 3D model…' : 'Drag or swipe to rotate. Pinch or scroll to zoom. With the keyboard, focus the model, then use the arrow keys to rotate and Page Up and Page Down to zoom.'}
-      </p>
+      <div className="viewer__bar">
+        <button type="button" className="btn btn--ghost" onClick={() => setPlaying((p) => !p)}>
+          {playing ? 'Stop rotation' : 'Start rotation'}
+        </button>
+        <p className="viewer__help">
+          {state === 'loading'
+            ? 'Loading 3D model…'
+            : 'The model turns slowly by itself. Drag or swipe to rotate it yourself, and pinch or scroll to zoom. With the keyboard, focus the model, then use the arrow keys to rotate and Page Up and Page Down to zoom.'}
+        </p>
+      </div>
       {item.modelSource && <p className="viewer__help">Model source: {item.modelSource}</p>}
     </div>
   )

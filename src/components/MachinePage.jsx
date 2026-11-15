@@ -3,6 +3,7 @@ import StatusBadge from './StatusBadge.jsx'
 import ModelViewer from './ModelViewer.jsx'
 import ReadAloud from './ReadAloud.jsx'
 import SafeImage from './SafeImage.jsx'
+import Brand from './Brand.jsx'
 import { formatDate, sourceLabel, assetUrl } from '../utils/format.js'
 
 function buildReadText(item) {
@@ -27,7 +28,7 @@ export default function MachinePage({ item, prefs }) {
     <header className="machine-bar">
       <div className="container machine-bar__inner">
         <a className="back" href="#archive">Back to the archive</a>
-        <a className="brand" href="#top">NSOROMA ARCHIVES</a>
+        <Brand />
       </div>
     </header>
   )
@@ -72,7 +73,7 @@ export default function MachinePage({ item, prefs }) {
               )}
               <section aria-labelledby="m-3d">
                 <h2 id="m-3d">3D model</h2>
-                <ModelViewer item={item} />
+                <ModelViewer item={item} prefs={prefs} />
               </section>
               <section aria-labelledby="m-look">
                 <h2 id="m-look">What it looks like</h2>
