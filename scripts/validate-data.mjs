@@ -32,6 +32,14 @@ data.forEach((item, i) => {
   ;['image', 'model', 'audioFile'].forEach((f) => {
     if (item[f] && !fs.existsSync(path.join(root, 'public', item[f]))) fail(`${tag}: ${f} file not found at public${item[f]}`)
   })
+  const toList = (v) => (Array.isArray(v) ? v : [])
+  if (item.video) {
+    if (!toList(item.videoCaptions).length) fail(`${tag}: a video needs videoCaptions`)
+    if (!toList(item.videoTranscript).length) fail(`${tag}: a video needs videoTranscript`)
+  }
+  ;[item.video, item.signLanguageResource, ...toList(item.videoCaptions).map((c) => c && c.src)].filter(Boolean).forEach((f) => {
+    if (!fs.existsSync(path.join(root, 'public', f))) fail(`${tag}: video file not found at public${f}`)
+  })
   if (item.image && !item.imageAltText) fail(`${tag}: image needs imageAltText`)
   if (item.model && !item.modelDescription) fail(`${tag}: model needs modelDescription`)
   if (item.model && !item.modelSource) fail(`${tag}: model needs modelSource (attribution)`)

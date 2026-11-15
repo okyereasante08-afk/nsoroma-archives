@@ -5,7 +5,7 @@ import { assetUrl } from '../utils/format.js'
 // A fixed backdrop. It starts solid blue, then each picture in backgrounds.json fades in
 // (darkened so text stays readable) as the visitor scrolls, one screen of scrolling per picture.
 // With reduced motion on, it stays solid blue. In high contrast it is always solid.
-export default function ScrollBackground({ prefs }) {
+export default function ScrollBackground({ prefs, startStage = 0 }) {
   const layers = useRef([])
 
   useEffect(() => {
@@ -13,7 +13,7 @@ export default function ScrollBackground({ prefs }) {
     const update = () => {
       frame = 0
       const reduce = document.documentElement.dataset.motion === 'reduce'
-      const stage = reduce ? 0 : window.scrollY / Math.max(window.innerHeight, 1)
+      const stage = reduce ? 0 : startStage + window.scrollY / Math.max(window.innerHeight, 1)
       layers.current.forEach((el, i) => {
         if (el) el.style.opacity = String(Math.min(1, Math.max(0, stage - i)))
       })
@@ -27,7 +27,7 @@ export default function ScrollBackground({ prefs }) {
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', onScroll)
     }
-  }, [prefs.motion])
+  }, [prefs.motion, startStage])
 
   return (
     <div className="bg" aria-hidden="true">

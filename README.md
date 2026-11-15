@@ -52,7 +52,7 @@ Open the address it prints (usually http://localhost:5173).
 
 ## Scroll background
 
-`src/data/backgrounds.json` lists the pictures that fade in behind the page as you scroll (blue first, then each picture in order, blurred and darkened). To use your own: put images (`.jpg`, `.webp` or `.svg`, ideally under 400 KB) in `public/assets/backgrounds/` and add a line for each in the file. You must have the right to use every image, so add a credit. It stays plain blue when reduced motion or high contrast is on.
+`src/data/backgrounds.json` lists the pictures that fade in behind the page as you scroll (blue first, then each picture in order, darkened so text stays readable). To use your own: put images (`.jpg`, `.webp` or `.svg`, ideally under 400 KB) in `public/assets/backgrounds/` and add a line for each in the file. You must have the right to use every image, so add a credit. It stays plain blue when reduced motion or high contrast is on.
 
 ## Explainer video
 
@@ -65,6 +65,17 @@ Everything is set in `src/data/story.json`. Put files in `public/assets/video/` 
 - `transcript`: a list of paragraphs, for example `["Narrator: Welcome...", "..."]`.
 
 `npm run validate` refuses to build if a video has no captions or transcript.
+
+## Video for each machine
+
+Double-clicking or double-tapping a 3D model (or pressing Enter while it has keyboard focus) asks "Watch the video about this machine?" with the options "Yes, watch the video" and "No, it was a mistake". A "Watch the video" button on the machine page does the same without the question. Add these fields to a record in `hardware.json`:
+
+- `"video": "/assets/video/<id>.mp4"`
+- `"videoCaptions": [{ "lang": "en", "label": "English", "src": "/assets/video/<id>.en.vtt" }]`
+- `"videoTranscript": ["First paragraph...", "Second paragraph..."]`
+- `"signLanguageResource": "/assets/video/<id>-sign.mp4"` (optional)
+
+A machine without a `video` shows a "coming soon" message. `npm run validate` requires captions and a transcript for any video.
 
 ## Accessibility notes
 

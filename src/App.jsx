@@ -91,6 +91,7 @@ export default function App() {
   if (machineId) {
     return (
       <>
+        <ScrollBackground prefs={prefs} startStage={1} />
         <a className="skip-link" href="#main">Skip to main content</a>
         <MachinePage item={hardware.find((h) => h.id === machineId) || null} prefs={prefs} />
         {overlays}
@@ -179,7 +180,7 @@ export default function App() {
               <li><a href="https://nssdc.gsfc.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA Space Science Data Coordinated Archive<span className="sr-only"> (opens in a new tab)</span></a></li>
               <li><a href="https://science.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA Science<span className="sr-only"> (opens in a new tab)</span></a></li>
             </ul>
-            <p>Built by Team A.J.A & Friends for the NASA Space Apps Challenge. This project is not affiliated with or endorsed by NASA.</p>
+            <p>Built by a student team for the NASA Space Apps Challenge. This project is not affiliated with or endorsed by NASA.</p>
           </div>
         </section>
       </main>

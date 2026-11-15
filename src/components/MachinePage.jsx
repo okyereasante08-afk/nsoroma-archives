@@ -1,9 +1,10 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import StatusBadge from './StatusBadge.jsx'
 import ModelViewer from './ModelViewer.jsx'
 import ReadAloud from './ReadAloud.jsx'
 import SafeImage from './SafeImage.jsx'
 import Brand from './Brand.jsx'
+import VideoFlow from './VideoFlow.jsx'
 import { formatDate, sourceLabel, assetUrl } from '../utils/format.js'
 
 function buildReadText(item) {
@@ -14,6 +15,7 @@ function buildReadText(item) {
 // A machine's own full-screen page. Reached at #/machine/<id>, so it can be opened in its own tab.
 export default function MachinePage({ item, prefs }) {
   const titleRef = useRef(null)
+  const [videoMode, setVideoMode] = useState(null)
 
   useEffect(() => {
     if (!item) return
@@ -52,6 +54,7 @@ export default function MachinePage({ item, prefs }) {
       {bar}
       <main id="main" className="machine">
         <div className="container">
+          <div className="panel machine__intro">
           <p className="meta-line">{item.category}</p>
           <h1 className="machine__title" ref={titleRef} tabIndex={-1}>{item.name}</h1>
           <div className="machine__status">
@@ -60,9 +63,15 @@ export default function MachinePage({ item, prefs }) {
           </div>
           <p className="lede">{item.simpleExplanation}</p>
           <ReadAloud key={item.id} text={buildReadText(item)} audioFile={assetUrl(item.audioFile)} auto={prefs.autoRead} />
+                    {item.video && (
+            <p>
+              <button type="button" className="btn" onClick={() => setVideoMode('play')}>Watch the video about this machine</button>
+            </p>
+          )}
           {!item.verified && (
             <p className="notice">This entry is still being checked against NASA sources, so details may change.</p>
           )}
+          </div>
 
           <div className="machine__grid">
             <div>
@@ -73,7 +82,7 @@ export default function MachinePage({ item, prefs }) {
               )}
               <section aria-labelledby="m-3d">
                 <h2 id="m-3d">3D model</h2>
-                <ModelViewer item={item} prefs={prefs} />
+                <ModelViewer item={item} prefs={prefs} onDoubleTap={() => setVideoMode('ask')} />
               </section>
               <section aria-labelledby="m-look">
                 <h2 id="m-look">What it looks like</h2>
@@ -127,6 +136,7 @@ export default function MachinePage({ item, prefs }) {
               </section>
             </div>
           </div>
+          <VideoFlow item={item} mode={videoMode} setMode={setVideoMode} />
           <p className="machine__back"><a className="btn" href="#archive">Back to the archive</a></p>
         </div>
       </main>

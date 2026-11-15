@@ -5,8 +5,14 @@
     "credit": "Generated for this project"
   },
   {
+    "src": "/assets/backgrounds/rover-bg.jpg",
+    "description": "Stylised stars with rover and constellation-style lines",
+    "credit": "Generated for this project"
+  },
+  {
     "src": "/assets/backgrounds/astronaut-space.jpg",
     "description": "Digital artwork of an astronaut in space",
     "credit": "Supplied by the team. Confirm usage rights and add the artist's credit before submitting."
   }
+
 ]
