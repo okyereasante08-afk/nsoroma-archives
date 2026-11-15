@@ -20,16 +20,51 @@
     "imageAltText": "Apollo 11 Lunar Module Eagle",
     "model": "/assets/models/apollo-11-lunar-module-eagle.glb",
     "modelDescription": "A boxy, four-legged lander in two parts: a wide descent stage wrapped in gold-coloured foil with landing legs and a ladder, and a smaller angular ascent stage on top with two triangular windows, antennas and small thrusters.",
-    "modelSource":"NASA 3D Resources",
+    "modelSource": "NASA 3D Resources",
     "audioDescription": "The Apollo Lunar Module looks like a gold and silver insect standing on four spindly legs, about seven metres tall. The lower half, the descent stage, is a wide, boxy platform wrapped in crinkled gold-coloured foil, with a ladder running down one leg. The upper half, the ascent stage, is a smaller, angular cabin with two triangular windows at the front, like eyes, where the two astronauts stood. Antennas and small rocket thrusters stick out from its sides.",
     "audioFile": "/assets/audio/apollo-11-lunar-module-eagle.mp3",
     "video": "/assets/video/apollo-11-lunar-module-eagle.mp4",
-    "videoCaptions": [{ "lang": "en", "label": "English", "src": "/assets/video/<id>.en.vtt" }],
-    "videoTranscript": ["First paragraph...", "Second paragraph..."],
+    "videoCaptions": [
+      {
+        "lang": "en",
+        "label": "English",
+        "src": "/assets/video/apollo-11-lunar-module-eagle.en.vtt"
+      }
+    ],
+    "videoTranscript": [
+      "[A golden footpad on grey moon dust, beside a bootprint. A title reads: Mind my foot!]",
+      "Narrator: Mind my foot! You're standing on my footpad.",
+      "Narrator: I'm Eagle's descent stage.",
+      "Narrator: On the 20th of July, 1969, I burned for 756 seconds",
+      "[An astronaut stands by the lander's ladder.]",
+      "[The lander's engine fires, throwing up dust. A fuel gauge reads seven percent.]",
+      "Narrator: to land two humans at Tranquility Base.",
+      "[The gauge falls to zero, empty.]",
+      "Narrator: Engineers gave me four legs, a ladder, and room to carry science. And no seats.",
+      "[A cartoon armchair appears beside the cramped lander.]",
+      "Narrator: Talk about standing room only.",
+      "Narrator: After 21 hours, Eagle's top half launched from my back.",
+      "[Two astronauts stand on the Moon, with Earth in the black sky. They wave, and one gives a thumbs up.]",
+      "Narrator: I stayed behind.",
+      "Narrator: 17 meters away, my little sibling, EASEP,",
+      "[A small solar-powered science station sits on the surface, rings of light pulsing outward.]",
+      "Narrator: listened for tremors in the Moon.",
+      "Narrator: It measured dust, powered by the sun.",
+      "[A thermometer shows plus thirty degrees Celsius.]",
+      "Narrator: It even survived heat 30 degrees past plan.",
+      "Narrator: Then, on the 27th of August, it stopped answering.",
+      "[It goes dark. A calendar shows the 27th of August, 1969.]",
+      "[A panel of mirrors glints in the sunlight.]",
+      "Narrator: Five meters away, a reflector needs no power at all.",
+      "[The lander stands far behind, the small reflector in front.]",
+      "Narrator: Keep waiting. Come say hi.",
+      "[The Moon fills the screen, with the Earth beside it among the stars.]"
+    ],
     "signLanguageResource": "/assets/video/apollo-11-lunar-module-eagle-sign.mp4",
-
     "visualExplanation": "The lander separated from the main spacecraft in lunar orbit and flew down to the surface. After the Moon walk, only the top half, the ascent stage, fired its engine and lifted off. The bottom half stayed on the Moon and acted as the launch platform.",
-    "sourceLinks": ["https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C"],
+    "sourceLinks": [
+      "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C"
+    ],
     "verified": false,
     "reviewNotes": "Confirm the NSSDCA ID matches Eagle, the ascent-stage fate, and the exact mission end date. Other Apollo landers can be added as separate records."
   },
@@ -58,38 +93,12 @@
     "audioDescription": "The Lunar Roving Vehicle is an open, lightweight frame on four wheels, about three metres long. Two bucket seats sit side by side in the middle, with a small T-shaped hand controller between them. At the front, a dish-shaped mesh antenna rises on a mast, with a television camera nearby. The wheels have no solid rubber tyres. They are woven from metal wire, with metal chevrons for grip.",
     "audioFile": "/assets/audio/apollo-15-lunar-roving-vehicle.mp3",
     "videoCaptions": null,
-    "videoTranscript":  [
-    "[A golden footpad on grey moon dust, beside a bootprint. A title reads: Mind my foot!]",
-    "Narrator: Mind my foot! You're standing on my footpad.",
-    "Narrator: I'm Eagle's descent stage.",
-    "Narrator: On the 20th of July, 1969, I burned for 756 seconds",
-    "[An astronaut stands by the lander's ladder.]",
-    "[The lander's engine fires, throwing up dust. A fuel gauge reads seven percent.]",
-    "Narrator: to land two humans at Tranquility Base.",
-    "[The gauge falls to zero, empty.]",
-    "Narrator: Engineers gave me four legs, a ladder, and room to carry science. And no seats.",
-    "[A cartoon armchair appears beside the cramped lander.]",
-    "Narrator: Talk about standing room only.",
-    "Narrator: After 21 hours, Eagle's top half launched from my back.",
-    "[Two astronauts stand on the Moon, with Earth in the black sky. They wave, and one gives a thumbs up.]",
-    "Narrator: I stayed behind.",
-    "Narrator: 17 meters away, my little sibling, EASEP,",
-    "[A small solar-powered science station sits on the surface, rings of light pulsing outward.]",
-    "Narrator: listened for tremors in the Moon.",
-    "Narrator: It measured dust, powered by the sun.",
-    "[A thermometer shows plus thirty degrees Celsius.]",
-    "Narrator: It even survived heat 30 degrees past plan.",
-    "Narrator: Then, on the 27th of August, it stopped answering.",
-    "[It goes dark. A calendar shows the 27th of August, 1969.]",
-    "[A panel of mirrors glints in the sunlight.]",
-    "Narrator: Five meters away, a reflector needs no power at all.",
-    "[The lander stands far behind, the small reflector in front.]",
-    "Narrator: Keep waiting. Come say hi.",
-    "[The Moon fills the screen, with the Earth beside it among the stars.]"
-  ],
+    "videoTranscript": null,
     "signLanguageResource": null,
     "visualExplanation": "The rover was stored folded flat on the side of the lander. An astronaut pulled cables to lower it to the ground, and its frame and wheels unfolded into shape. A battery sent power to an electric motor in each wheel.",
-    "sourceLinks": ["https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C"],
+    "sourceLinks": [
+      "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C"
+    ],
     "verified": false,
     "reviewNotes": "Confirm the NSSDCA ID points to the rover record. Confirm landing region and mission end date. Apollo 16 and 17 rovers can be added as separate records."
   },
@@ -121,7 +130,9 @@
     "videoTranscript": null,
     "signLanguageResource": null,
     "visualExplanation": "Surveyor slowed itself with a rocket and landed on three legs. Its camera photographed the surroundings and sent pictures to Earth. Its scoop arm dug small trenches to test how firm the soil was.",
-    "sourceLinks": ["https://science.nasa.gov/mission/surveyor-3/"],
+    "sourceLinks": [
+      "https://science.nasa.gov/mission/surveyor-3/"
+    ],
     "verified": false,
     "reviewNotes": "Confirm the last-contact and mission end dates. Surveyors 1, 5, 6 and 7 also landed and can be added as separate records."
   },
@@ -153,7 +164,9 @@
     "videoTranscript": null,
     "signLanguageResource": null,
     "visualExplanation": "The Pathfinder lander bounced to a stop on Mars, cushioned by airbags. Its ramps opened and Sojourner drove down onto the surface. It stayed within range of the lander, which relayed its data to Earth.",
-    "sourceLinks": ["https://science.nasa.gov/mission/mars-pathfinder/"],
+    "sourceLinks": [
+      "https://science.nasa.gov/mission/mars-pathfinder/"
+    ],
     "verified": false,
     "reviewNotes": "Confirm the date the rover's own operations ended versus the lander's last transmission."
   },
@@ -185,7 +198,9 @@
     "videoTranscript": null,
     "signLanguageResource": null,
     "visualExplanation": "Ingenuity travelled to Mars attached to the underside of the Perseverance rover. It was lowered to the ground, charged its batteries with its solar panel, and then spun its blades at about 2,400 turns a minute to lift off in Mars's thin air.",
-    "sourceLinks": ["https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/"],
+    "sourceLinks": [
+      "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/"
+    ],
     "verified": false,
     "reviewNotes": "Confirm the flight count and mission end date against NASA's final mission summary."
   },
@@ -217,7 +232,9 @@
     "videoTranscript": null,
     "signLanguageResource": null,
     "visualExplanation": "Pioneer 10 used its dish to point at Earth and send faint radio signals home. As it passed Jupiter, the planet's gravity flung it onward, faster, out toward the edge of the Solar System.",
-    "sourceLinks": ["https://science.nasa.gov/mission/pioneer-10/"],
+    "sourceLinks": [
+      "https://science.nasa.gov/mission/pioneer-10/"
+    ],
     "verified": false,
     "reviewNotes": "Confirm the distinction between formal mission end (1997) and last signal (2003). The team listed this under Mars; it is a deep-space mission."
   },

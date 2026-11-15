@@ -23,6 +23,7 @@ const ids = new Set()
 data.forEach((item, i) => {
   const tag = `Record ${i + 1} (${item.id || 'no id'})`
   required.forEach((f) => { if (item[f] === undefined) fail(`${tag}: missing field "${f}" (use null if unknown)`) })
+  if (JSON.stringify(item).includes('<id>')) fail(`${tag}: still contains the placeholder <id>. Replace it with the machine's real id (for example ${item.id})`)
   if (ids.has(item.id)) fail(`${tag}: duplicate id`)
   ids.add(item.id)
   if (!['ACTIVE', 'INACTIVE'].includes(item.status)) fail(`${tag}: status must be ACTIVE or INACTIVE`)
